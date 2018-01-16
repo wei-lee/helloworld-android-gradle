@@ -36,6 +36,10 @@ node("android"){
     }
   }
 
+ stage("Security Scan") {
+   println('Upload binary to Kryptowire for security scan')
+ }
+
  stage("Archive"){
     if (params.BUILD_CONFIG == 'release') {
         archiveArtifacts artifacts: '**/*.apk', excludes: 'app/build/outputs/apk/*-unaligned.apk'
